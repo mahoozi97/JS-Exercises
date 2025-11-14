@@ -10,11 +10,22 @@ let null1 = null;
 console.log(string, number, boolean, undefined1, null1);
 
 // 2. Swap the values of two variables without using a third variable.
-// crazy exercise. I will try next time.
+
 let firstName = "osama";
 let lastName = "hasan";
-// console.log(firstName + lastName, lastName + firstName);
-// console.log(firstName += lastName == lastName);
+
+// Combine the texts directly in firstName
+firstName += lastName;
+
+// Update lastName to extract the original first name from the combined text
+lastName = firstName.slice(0, firstName.length - lastName.length);
+
+// Update firstName to extract the original last name from the combined text
+firstName = firstName.slice(lastName.length);
+
+// Test the result
+console.log("firstName =", firstName); // "hasan"
+console.log("lastName =", lastName);   // "osama"
 
 // 3. Calculate the area of a rectangle using variables.
 let length = 50;
@@ -150,8 +161,22 @@ let person = {
 console.log(person);
 // 2. Add a method that prints a **greeting** using the person’s name.
 
+person = {
+  name: "ahmed",
+  age: 22,
+  hi() {
+    console.log(`Hi, ${this.name}`);
+  },
+};
+
+person.hi();
+
 // 3. Loop through all the properties of an object and print them.
+
 // 4. Update a property and delete a property from the object.
+person.name = "Qassim"; //
+delete person.age;
+console.log(person);
 // 5. Create an array of objects (people) and filter **all people older than 20**.
 
 // ---
