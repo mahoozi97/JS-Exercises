@@ -17,10 +17,10 @@ let lastName = "hasan";
 // console.log(firstName += lastName == lastName);
 
 // 3. Calculate the area of a rectangle using variables.
-let length = 50
-let width = 50
-let area = length * width
-console.log(area)
+let length = 50;
+let width = 50;
+let area = length * width;
+console.log(area);
 // 4. Create a program that asks the user for their **name** and **age**, then prints:
 //    `"Hello <name>, you are <age> years old."`
 
@@ -28,7 +28,6 @@ console.log(area)
 // let username = prompt("whats your name?")
 // let age = prompt("How old are you?")
 //console.log(`Hello ${username}, you are ${age} years old`)
-
 
 // ---
 
@@ -47,40 +46,40 @@ console.log(area)
 // ## 3️⃣ Strings
 
 // 1. Count the number of characters in a string.
-let str = "How many characters"
-console.log(str.length)
+let str = "How many characters";
+console.log(str.length);
 // 2. Extract a substring from a string.
-console.log(str.slice(2,8))
+console.log(str.slice(2, 8));
 // 3. Convert a string to **uppercase** and **lowercase**.
-let str2 = "how are you?"
-console.log(str2.toUpperCase())
+let str2 = "how are you?";
+console.log(str2.toUpperCase());
 // 4. Replace all spaces in a string with dashes.
-console.log(str.replaceAll(" ", "#"))
+console.log(str.replaceAll(" ", "#"));
 // 5. Check if a string **contains** a certain word.
-console.log(str.includes("?"))
+console.log(str.includes("?"));
 // ---
 
 // ## 4️⃣ Arrays
 
 // 1. Create an array of your **favorite foods**.
-let favoriteFoods = ["fish", "rise"]
+let favoriteFoods = ["fish", "rise"];
 // 2. Add an item at the **beginning** and **end** of the array.
-favoriteFoods.push("salad")
-favoriteFoods.unshift("shrimp")
-console.log(favoriteFoods)
+favoriteFoods.push("salad");
+favoriteFoods.unshift("shrimp");
+console.log(favoriteFoods);
 // 3. Remove the first and last items.
-favoriteFoods.shift()
-favoriteFoods.pop()
-console.log(favoriteFoods)
+favoriteFoods.shift();
+favoriteFoods.pop();
+console.log(favoriteFoods);
 // 4. Find the **index of a specific item**.
-console.log(favoriteFoods.indexOf("rise"))
+console.log(favoriteFoods.indexOf("rise"));
 //or
-console.log(favoriteFoods.includes("rise"))
+console.log(favoriteFoods.includes("rise"));
 // 5. Loop through the array and print each element.
-favoriteFoods.forEach((food) => console.log(food))
+favoriteFoods.forEach((food) => console.log(food));
 // 6. Create a new array containing the **length of each string** in the original array.
-let newArray = favoriteFoods.map(food => food.length);
-console.log(newArray)
+let newArray = favoriteFoods.map((food) => food.length);
+console.log(newArray);
 
 // ---
 
@@ -97,9 +96,36 @@ console.log(newArray)
 // ## 6️⃣ Conditionals
 
 // 1. Ask the user for their age and check if they can **vote**.
-// 2. Write a program that converts a **grade (0–100)** into a **letter grade** (A, B, C, D, F).
+
+// let age = prompt("How old are you?")
+// if (age >= 18) {
+//   alert("You can vote")
+// } else {
+//   alert("You cannot vote")
+// }
+
+// 2. Write a program that converts a **grade (0–100)** into a **letter grade** (A, B, C, D, F). //solved in:
+//Exercise 10
+// https://github.com/mahoozi97/intro-to-javascript-functions-lab/blob/main/app.js
+
 // 3. Check if a number is **positive, negative, or zero**.
+
+let num = 2;
+if (num > 0) {
+  console.log("the number is positive");
+} else if (num < 0) {
+  console.log("the number is negative");
+} else {
+  console.log("the number is zero");
+}
 // 4. Ask the user for a day of the week and print if it’s a **weekday or weekend**.
+
+// let day = prompt("What is today?")
+// if (day === "friday" || day === "saturday") {
+//   alert("weekend")
+// } else {
+//   alert("weekday")
+// }
 
 // ---
 
@@ -116,7 +142,14 @@ console.log(newArray)
 // ## 8️⃣ Objects
 
 // 1. Create an object representing a **person** with `name`, `age`, `city`.
+let person = {
+  name: "Hasan",
+  age: 19,
+  city: "manama",
+};
+console.log(person);
 // 2. Add a method that prints a **greeting** using the person’s name.
+
 // 3. Loop through all the properties of an object and print them.
 // 4. Update a property and delete a property from the object.
 // 5. Create an array of objects (people) and filter **all people older than 20**.
@@ -136,9 +169,31 @@ console.log(newArray)
 // ## 🔟 DOM Manipulation (if using a browser)
 
 // 1. Select an element by ID, class, and tag name.
+document.getElementById("h-js");
+
 // 2. Change the **text content** of an element.
+document.querySelector(".div-js").innerHTML = "Edited by DOM";
+
 // 3. Add a new **element** to the DOM.
+
+// my solution...
+document.querySelector(".add-element").innerHTML = "<button>Button</button>";
+
+// perfect solution..
+let parent = document.querySelector(".create-element");
+let btn = document.createElement("button");
+btn.innerHTML = "Button2";
+parent.appendChild(btn);
+
 // 4. Remove an element from the DOM.
+
+// my solution...
+document.querySelector(".remove-element").innerHTML = "";
+
+// perfect solution..
+let el = document.querySelector(".remove-element2");
+el.remove(); // removes the element itself
+
 // 5. Create a small **interactive button** that changes the page background when clicked.
 
 // ---
