@@ -25,7 +25,7 @@ firstName = firstName.slice(lastName.length);
 
 // Test the result
 console.log("firstName =", firstName); // "hasan"
-console.log("lastName =", lastName);   // "osama"
+console.log("lastName =", lastName); // "osama"
 
 // 3. Calculate the area of a rectangle using variables.
 let length = 50;
@@ -207,7 +207,7 @@ document.querySelector(".add-element").innerHTML = "<button>Button</button>";
 // perfect solution..
 let parent = document.querySelector(".create-element");
 let btn = document.createElement("button");
-btn.innerHTML = "Button2";
+btn.innerHTML = "Toggle Background";
 parent.appendChild(btn);
 
 // 4. Remove an element from the DOM.
@@ -220,6 +220,19 @@ let el = document.querySelector(".remove-element2");
 el.remove(); // removes the element itself
 
 // 5. Create a small **interactive button** that changes the page background when clicked.
+document.querySelectorAll(".create-element").forEach((button) => {
+  button.addEventListener("click", () => {
+    if (document.body.style.background === "white") {
+      document.body.style.background = "red";
+    } else {
+      document.body.style.background = "white"
+    }
+
+    // short way!!
+    // document.body.style.background =
+    // document.body.style.background === "red" ? "white" : "red";
+  });
+});
 
 // ---
 
